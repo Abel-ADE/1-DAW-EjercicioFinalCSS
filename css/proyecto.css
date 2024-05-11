@@ -7,23 +7,30 @@
     padding: 0px;
     margin: 0px;
     box-sizing: content-box;
-    transition: all 0.02s linear;
 }
 
 body {
     /* Estilos modo claro */
-    transition: background-color 0.3s, color 0.3s;
+    transition: all 0.3s linear;
     background-color: white;
-    color: black;
+    color: #333;
     /*Estilos generales*/
     /* Contenedor flexible */
     display: flex;
     flex-direction: column;
+
+
 }
+
+/* Estilos de la cabecera */
 
 header {
     display: flex;
     flex-direction: column;
+    /* position: -webkit-sticky;
+    position: sticky; */
+    top: 0;
+    background-color: inherit;
 }
 
 .header__head {
@@ -68,20 +75,44 @@ header {
     font-weight: bold;
 }
 
+.header__navbar ul a:hover {
+    color: #47A3DC;
+}
+
+/* Estilos del cuerpo */
+
 main {
     display: flex;
     flex-direction: column;
     padding: 20px;
     gap: 10px;
+    height: 84vh;
 }
+
+.scroll {
+    max-height: 82vh;
+    overflow: auto;
+    max-height: 81vh;
+
+    scroll-snap-type: y mandatory;
+    scrollbar-width: none;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+/* Estilos de la sección de noticias */
 
 .section {
     display: flex;
     flex-direction: column;
+    scroll-snap-align: start;
 }
 
 .section>h1 {
     padding-bottom: 20px;
+    text-transform: uppercase;
     text-align: center;
     color: #47A3DC;
 }
@@ -91,7 +122,23 @@ main {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 2fr 1fr 0.3fr;
     gap: 20px;
-    max-height: 700px;
+    max-height: 77vh;
+}
+
+/* Estilos migas de pan */
+
+ul.breadcrumb {
+    display: flex;
+}
+
+ul.breadcrumb li+li:before {
+    padding: 8px;
+    content: "/";
+}
+
+ul.breadcrumb li a.active {
+    color: #47A3DC;
+    font-weight: bold;
 }
 
 /* Estilos de cada noticia */
@@ -170,14 +217,14 @@ main {
     max-height: 65%;
 }
 
-/* Migas de pan dentro de la sección de noticias */
+/* Paginación de noticias */
 
-.section__breadcrumb{
+.section__pagination {
     grid-column: 1/5;
     padding-top: 20px;
 }
 
-.breadcrumb__pagination{
+.pagination {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -185,29 +232,145 @@ main {
     gap: 2px;
 }
 
-.breadcrumb__pagination a{
+.pagination a {
     padding: 15px;
     color: #47A3DC;
     font-weight: bold;
 }
 
-.breadcrumb__pagination a:hover{
+.pagination a:hover {
     background-color: #47A3DC;
     color: white;
 }
 
-#active{
+.pagination #active {
     background-color: #47A3DC;
     color: white;
+}
+
+/* Estilos footer */
+
+.footer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    height: min-content;
+    padding: 30px 28vw;
+    text-align: center;
+    line-height: 24px;
+
+    border-top: 2px solid currentColor;
+}
+
+.footer .footer__icons {
+    display: inline-flex;
+    gap: 10px;
+}
+
+.footer__icons a {
+    padding: 5px;
+    transition: transform 0.3s linear;
+}
+
+.footer__icons a:hover {
+    color: #47A3DC;
+    transform: translateY(-4px);
 }
 
 /* Boton subir */
 
-#button__up{
-    position: fixed;
+#button__up {
+    position: absolute;
     right: 20px;
-    bottom: 20px;
+    top: 20px;
     color: #47A3DC;
+}
+
+/* Estilos del login */
+
+.hidden {
+    visibility: hidden;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.login section {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    min-height: 40vh;
+    width: 20vw;
+    padding: 30px;
+    border: 2px solid currentColor;
+    border-radius: 20px;
+}
+
+.login h2 {
+    text-align: center;
+}
+
+.login section form {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-between;
+    gap: 40px;
+    font-size: 20px;
+}
+
+.form__body{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    color: currentColor;
+}
+
+.form__body input{
+    background-color: inherit;
+}
+
+.form__footer{
+    display: flex;
+    flex-direction: column;
+}
+
+form input {
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 18px;
+}
+
+form input[type="submit"] {
+    padding: 10px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: inherit;
+    color: #47A3DC;
+    border: 2px solid currentColor;
+    border-radius: 20px;
+    transition: all 0.3s linear;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    transform: scale(1.1);
+}
+
+form input[type="submit"]:active {
+    transform: scale(1);
 }
 
 /* Estilos para modo oscuro (cambiado manualmente) */
