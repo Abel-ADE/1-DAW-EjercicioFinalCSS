@@ -493,6 +493,8 @@ form input[type="submit"]:active {
     border-radius: 50%;
 }
 
-[data-theme='dark'] #deportes, [data-theme='dark'] #finanzas, [data-theme='dark'] #internacional {
+[data-theme='dark'] #deportes, 
+[data-theme='dark'] #finanzas, 
+[data-theme='dark'] #internacional {
     background-color: var(--color-secondary);
 }
