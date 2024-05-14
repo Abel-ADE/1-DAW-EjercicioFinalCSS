@@ -8,10 +8,10 @@ function lightMode() {
 };
 
 function darkMode() {
-   // Dark mode is enabled
-   document.body.setAttribute('data-theme', 'dark');
-   document.getElementById('moon').style.display = 'none';
-   document.getElementById('sun').style.display = 'block';
+    // Dark mode is enabled
+    document.body.setAttribute('data-theme', 'dark');
+    document.getElementById('moon').style.display = 'none';
+    document.getElementById('sun').style.display = 'block';
 };
 
 // Toggle between light and dark mode
@@ -34,4 +34,22 @@ window.onload = function () {
         // Light mode is enabled
         lightMode();
     }
+
+    scrollUp();
 };
+
+// Para subir al principio de la página
+const links = document.querySelectorAll('nav a');
+
+links.forEach((link) => {
+    link.addEventListener('click', (e) => {
+        setTimeout(scrollUp, 0);
+    });
+});
+
+function scrollUp() {
+    window.scrollTo({
+        top: 0,
+    });
+}
+
