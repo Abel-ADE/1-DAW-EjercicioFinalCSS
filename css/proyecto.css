@@ -58,7 +58,7 @@ header {
     gap: 20px;
 }
 
-.option__login:hover{
+.option__login:hover {
     color: var(--color-tertiary);
     transform: scale(1.1);
     text-shadow: 0px 0px 1px var(--color-tertiary);
@@ -72,11 +72,11 @@ header {
     background: none;
 }
 
-#toggleMode:hover{
+#toggleMode:hover {
     transform: scale(1.2);
 }
 
-#toggleMode:active{
+#toggleMode:active {
     transform: scale(1);
 }
 
@@ -116,19 +116,20 @@ main {
     max-height: 80vh;
     overflow: auto;
 
+    -ms-scroll-snap-type: y mandatory;
     scroll-snap-type: y mandatory;
     scrollbar-width: none;
 }
 
-#deportes{
+#deportes {
     background-color: rgb(185, 217, 245);
 }
 
-#finanzas{
+#finanzas {
     background-color: rgb(245, 216, 221);
 }
 
-#internacional{
+#internacional {
     background-color: rgb(190, 240, 190);
 }
 
@@ -293,6 +294,10 @@ ul.breadcrumb li a.active {
     justify-content: center;
     gap: 10px;
 
+    height: -webkit-min-content;
+
+    height: -moz-min-content;
+
     height: min-content;
     padding: 30px 28vw;
     text-align: center;
@@ -316,7 +321,7 @@ ul.breadcrumb li a.active {
     transform: translateY(-4px);
 }
 
-.footer .flag{
+.footer .flag {
     width: 50px;
     height: 30px;
     background-image: linear-gradient(to bottom, red 0% 33%, yellow 33% 66%, red 66% 100%);
@@ -332,19 +337,36 @@ ul.breadcrumb li a.active {
     color: var(--color-tertiary);
 }
 
-#button__up:hover{
+#button__up:hover {
+    -webkit-animation: up 0.9s ease infinite;
     animation: up 0.9s ease infinite;
 }
 
-@keyframes up {
-    0%{
+@-webkit-keyframes up {
+    0% {
         transform: rotate(0deg);
     }
-    50%{
+
+    50% {
         transform: rotate(10deg);
     }
 
-    100%{
+    100% {
+        transform: rotate(-10deg);
+    }
+
+}
+
+@keyframes up {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(10deg);
+    }
+
+    100% {
         transform: rotate(-10deg);
     }
 
@@ -450,7 +472,7 @@ form input[type="submit"]:active {
 
 /* Estilos registro */
 
-.register{
+.register {
     padding: 0px;
     margin: 0px;
 }
@@ -493,8 +515,8 @@ form input[type="submit"]:active {
     border-radius: 50%;
 }
 
-[data-theme='dark'] #deportes, 
-[data-theme='dark'] #finanzas, 
+[data-theme='dark'] #deportes,
+[data-theme='dark'] #finanzas,
 [data-theme='dark'] #internacional {
     background-color: var(--color-secondary);
 }
