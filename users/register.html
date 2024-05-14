@@ -124,18 +124,29 @@
                         <input type="file" id="dniCopy" name="dniCopy" placeholder="dniCopy">
                     </div>
 
-
-                    <div>
-                        <label for="gender">Género:</label>
-                        <span>Masculino</span>
-                        <input type="radio" id="gender_Man" name="gender" value="man">
-                        <span>Femenino</span>
-                        <input type="radio" id="gender_Man" name="gender" value="man">
-                    </div>
-
                     <div>
                         <label for="year">Año nacimiento:</label>
                         <input type="number" id="year" name="year" maxlength="4" max="2024" min="1900">
+                    </div>
+
+
+                    <div>
+                        <label for="suscribe">Plan de suscripción:</label>
+                        <input type="radio" id="suscribe_basis" name="suscribe" value="1€">
+                        <label for="suscribe_basis">1€/mes</label>
+                        <input type="radio" id="suscribe_medium" name="suscribe" value="3€">
+                        <label for="suscribe_medium">3€/trimestre</label>
+                        <input type="radio" id="suscribe_top" name="suscribe" value="10€" checked="checked">
+                        <label for="suscribe_top">10€/anuales</label>
+                    </div>
+
+
+                    <div>
+                        <label for="gender">Género:</label>
+                        <input type="radio" id="gender_Man" name="gender" value="man">
+                        <label for="gender_Man">Masculino</label>
+                        <input type="radio" id="gender_Woman" name="gender" value="woman">
+                        <label for="gender_Woman">Femenino</label>
                     </div>
 
                     <div>
@@ -156,16 +167,6 @@
                     <div>
                         <label for="town">Población:</label>
                         <input type="text" id="town" name="town" placeholder="Introduce tu Población">
-                    </div>
-
-                    <div>
-                        <label for="province">Elige una provincia:</label>
-                        <select name="province" id="province">
-                            <option value="A Coruña">A Coruña</option>
-                            <option value="Lugo">Lugo</option>
-                            <option value="Ourense">Ourense</option>
-                            <option value="Pontevedra">Pontevedra</option>
-                        </select>
                     </div>
 
 
@@ -192,6 +193,16 @@
                     <div>
                         <label for="observations">Añade alguna observación (opcional):</label>
                         <textarea name="observations" id="observations" rows="5" cols="50"></textarea>
+                    </div>
+
+                    <div>
+                        <label for="province">Elige una provincia:</label>
+                        <select name="province" id="province">
+                            <option value="A Coruña">A Coruña</option>
+                            <option value="Lugo">Lugo</option>
+                            <option value="Ourense">Ourense</option>
+                            <option value="Pontevedra">Pontevedra</option>
+                        </select>
                     </div>
                     
                     <div>
