@@ -417,6 +417,8 @@ ul.breadcrumb li a.active {
     flex-direction: column;
 }
 
+/* Estilos generales formulario */
+
 form input {
     padding: 10px;
     border-radius: 20px;
